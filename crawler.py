@@ -68,8 +68,8 @@ print objects[6]
 
 #first create a collection named 'dataset'
 # i=0
-# for key,value in objects.iteritems():
-# 	db.dataset.insert(value)
+for key,value in objects.iteritems():
+	db.dataset.insert(value)
 # 	# i+=1
 # 	# if i == 10:
 # 	# 	break
