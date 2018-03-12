@@ -13,6 +13,8 @@ db = client.citationDataset
 
 iterator = 0
 
+authorId=0
+
 for i in xrange(len(f_contents)):
 
 	line = f_contents[i]
@@ -33,7 +35,12 @@ for i in xrange(len(f_contents)):
 
 	if line.startswith("#@"):
 		listAuthors = line[2:].strip().split(",")
-		authors.append(listAuthors)
+		listAuthors_with_id=[]
+		for author_name in listAuthors:
+			author_dict={str(authorId):author_name}
+			listAuthors_with_id.append(author_dict)
+			authorId+=1
+		authors.append(listAuthors_with_id)
 
 	if line.startswith("#t"):
 		year.append(int(line[2:]))
@@ -66,11 +73,11 @@ for i in xrange(len(paperId)):
 print objects[5]
 print objects[6]
 
-#first create a collection named 'dataset'
-# i=0
+# first create a collection named 'dataset'
+i=0
 for key,value in objects.iteritems():
-	db.dataset.insert(value)
-# 	# i+=1
+	db.db2.insert(value)
+	# i+=1
 # 	# if i == 10:
 # 	# 	break
 
