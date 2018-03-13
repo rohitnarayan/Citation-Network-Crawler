@@ -35,12 +35,12 @@ for i in xrange(len(f_contents)):
 
 	if line.startswith("#@"):
 		listAuthors = line[2:].strip().split(",")
-		listAuthors_with_id=[]
+		# listAuthors_with_id=[]
+		author_dict={}
 		for author_name in listAuthors:
-			author_dict={str(authorId):author_name}
-			listAuthors_with_id.append(author_dict)
+			author_dict[str(authorId)]=author_name
 			authorId+=1
-		authors.append(listAuthors_with_id)
+		authors.append(author_dict)
 
 	if line.startswith("#t"):
 		year.append(int(line[2:]))
@@ -70,11 +70,11 @@ for i in xrange(len(paperId)):
 		}
 	objects[i] = paper
 
-print objects[5]
-print objects[6]
+# print objects[5]
+# print objects[6]
 
 # first create a collection named 'dataset'
-i=0
+# i=0
 for key,value in objects.iteritems():
 	db.db2.insert(value)
 	# i+=1
@@ -82,9 +82,9 @@ for key,value in objects.iteritems():
 # 	# 	break
 
 # print objects[0]
-# print objects[628134]
-# print objects[5]
-# print objects[6]
+print objects[628134]
+print objects[5]
+print objects[6]
 
 '''
 #* --- paperTitle

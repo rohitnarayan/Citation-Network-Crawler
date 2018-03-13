@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 client = MongoClient('mongodb://localhost:27017/')
 db = client.citationDataset
 
-paperNetwork = db['dataset']
+paperNetwork = db['db2']
 
 peeps = paperNetwork.find()
 
