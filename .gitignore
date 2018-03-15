@@ -1,5 +1,10 @@
 outputacm.txt
+DBLP-citation-Feb21.txt
 test.net
 paperPaperNetwork.net
 crawl_author_names.py
 update_author_names_with_id.py
+find_cited_data.py
+VANUELIST.xlsx
+data.txt
+domain_segregation.py
